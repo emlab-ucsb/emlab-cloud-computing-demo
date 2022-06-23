@@ -39,9 +39,24 @@ knitr::opts_chunk$set(echo = FALSE)
   + [Google's online GUI](https://console.cloud.google.com/compute)  
   + [The terminal](https://grantmcdermott.com/ds4e/gce-i.html)  
   + [googleComputeEngineR](https://cloudyr.github.io/googleComputeEngineR/) R package
+  
+- Can install R Studio, allowing you to run R Studio interactively through your web browser
 
 ## UCSB servers
 
 ## Comparing the two approaches
 
+- Cost
+- Computing power
+- Handling data
+- Ease of use
+
+## Our recommendation (*for most applications*)
+
+Google VMs using Compute Engine
+
 ## Live demo time!
+
+- `r/google_compute_engine_demo.R`
+
+- `r/ucsb_server_demo.R`
