@@ -1,0 +1,47 @@
+---
+title: "Cloud computing overview"
+author: "emLab"
+output: slidy_presentation
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Why cloud computing?
+
+- Running analyses in parallel 
+  + (where more cores are good!)   
+
+- Running analyses with data that are too big for your personal computer 
+  + (where more RAM is good!)  
+  
+- Freeing up your personal computer to do other things  
+
+## Google virtual machines (VM) using Compute Engine  
+
+- Uses Google's [Compute Engine](https://cloud.google.com/compute), part of the Google Cloud ecosystem of produts  
+
+- Spin up virtual machines (VMs) while specifying the number of cores you want and how much RAM you want  
+
+  + Up to 224 cores and 896 GB RAM!
+
+- They cost money to use, but [pricing](https://cloud.google.com/compute/vm-instance-pricing) is straightforward and on a per-hour basis  
+
+  + For example, 16 cores and 64 GB of RAM costs \$0.54/hour
+  + 32 cores and 128 GB of RAM costs \$1.08/hour
+  + 224 cores and 896 GB RAM costs \$7.57/hour
+
+## Google virtual machines (VM) using Compute Engine  
+
+- Three ways to spin up VMs: 
+  + [Google's online GUI](https://console.cloud.google.com/compute)  
+  + [The terminal](https://grantmcdermott.com/ds4e/gce-i.html)  
+  + [googleComputeEngineR](https://cloudyr.github.io/googleComputeEngineR/) R package
+
+## UCSB servers
+
+## Comparing the two approaches
+
+## Live demo time!

@@ -3,6 +3,6 @@ This repo contains the presentation and code for emLab's internal cloud computin
 
 This demo will go over two options for cloud computing:
 
-1. Google virtual machines through [Compute Engine](https://console.cloud.google.com/compute) 
+1. Google virtual machines through [Compute Engine](https://cloud.google.com/compute) 
 
 2. UCSB servers  
