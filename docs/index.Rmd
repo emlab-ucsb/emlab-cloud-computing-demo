@@ -42,6 +42,8 @@ knitr::opts_chunk$set(echo = FALSE)
   
 - Can install R Studio, allowing you to run R Studio interactively through your web browser
 
+- Can use the [googledrive](https://googledrive.tidyverse.org/index.html) R package to read/write data from the emLab Team Drive
+
 ## UCSB servers
 
 ## Comparing the two approaches
