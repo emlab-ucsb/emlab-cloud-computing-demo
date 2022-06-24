@@ -36,7 +36,7 @@ gce_get_external_ip(vm_name)
 # So always stop your VMs when not in use
 gce_vm_stop(vm_name)
 
-# And delete it
+# And delete it if you won't be needing it again
 gce_vm_delete(vm_name)
 
 # Now let's look at the instance list again to make sure it was deleted
