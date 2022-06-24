@@ -5,6 +5,9 @@ library(googleComputeEngineR)
 # First, follow setup instructions for downloading json and editing .Renviron
 # https://cloudyr.github.io/googleComputeEngineR/articles/installation-and-authentication.html
 
+# Let's look at the VMs currently running
+gce_list_instances()
+
 # Create a Persistent RStudio on Google Compute Engine
 # Following https://cloudyr.github.io/googleComputeEngineR/articles/persistent-rstudio.html
 
@@ -19,6 +22,9 @@ gce_vm(name = vm_name,
        password = "1234", 
        disk_size_gb = 10) # Specify how big a hard drive you need
 
+# Now let's look at the instance list
+gce_list_instances()
+
 gce_get_external_ip(vm_name)
 
 # Navigate browser to {external_ip}:80
@@ -32,3 +38,6 @@ gce_vm_stop(vm_name)
 
 # And delete it
 gce_vm_delete(vm_name)
+
+# Now let's look at the instance list again to make sure it was deleted
+gce_list_instances()
