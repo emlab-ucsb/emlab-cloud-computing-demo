@@ -28,3 +28,4 @@ vignettes/*.pdf
 .Renviron
 *.json
 emlab-cloud-computing-demo.Rproj
+.DS_Store
