@@ -7,12 +7,12 @@ library(googleComputeEngineR)
 vm_name <- "gavin-rstudio-server-test"
 
 # n2-standard-8 has 8 cores and 32 GB of RAM
-vm <- gce_vm(name = vm_name, 
-             predefined_type = "n2-standard-8", 
-             template = "rstudio", 
-             username = "gmcdonald", 
-             password = "1234", 
-             dynamic_image = "gcr.io/gcer-public/persistent-rstudio")
+gce_vm(name = vm_name, 
+       predefined_type = "n2-standard-8", 
+       template = "rstudio", 
+       username = "gmcdonald", 
+       password = "1234", 
+       disk_size_gb = 10)
 
 gce_get_external_ip(vm_name)
 
