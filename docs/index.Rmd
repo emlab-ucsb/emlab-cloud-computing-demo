@@ -62,3 +62,11 @@ Google VMs using Compute Engine
 - `r/google_compute_engine_demo.R`
 
 - `r/ucsb_server_demo.R`
+
+## Discussion
+
+- What do folks think of our recommendation to generally use Google VMs with Compute Engine?
+- Should we update the [emLab SOP](https://emlab-ucsb.github.io/SOP/5-high-performance-computing.html) and make this more formal?
+- We might eventually think about a standard emLab VM Docker image that includes our commonly used packages
+- And maybe even an emLab R package to help automate some of this?
+- Depending on how many people and how intensively we are going to be using this, we may need to think about how to better monitor and manage billing across projects
