@@ -42,15 +42,20 @@ knitr::opts_chunk$set(echo = FALSE)
   
 - Can install R Studio, allowing you to run R Studio interactively through your web browser
 
-- Can use the [googledrive](https://googledrive.tidyverse.org/index.html) R package to read/write data from the emLab Team Drive
-
 ## UCSB servers
+
+## Working with data on Google Drive
+
+- Manually move data 
+- [googledrive](https://googledrive.tidyverse.org/index.html) R package to read/write data from the emLab Team Drive
+- Mount Goolge Drive as disk (*not currently working on Goolge Compute Engine*)
 
 ## Comparing the two approaches
 
 - Cost
 - Computing power
 - Handling data
+- Working with data on Google Drive
 - Ease of use
 
 ## Our recommendation (*for most applications*)
