@@ -4,7 +4,6 @@ author: "emLab"
 output:
   revealjs::revealjs_presentation:
     theme: simple
-    highlight: default
     center: true
     transition: none
     background_transition: none
@@ -12,10 +11,6 @@ output:
       slideNumber: 'c/t'
 date: "`r Sys.Date()`"
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
 
 ## Why cloud computing?
 
