@@ -1,7 +1,15 @@
 ---
 title: "Cloud computing overview"
 author: "emLab"
-output: slidy_presentation
+output:
+  revealjs::revealjs_presentation:
+    theme: simple
+    highlight: default
+    center: true
+    transition: none
+    background_transition: none
+    reveal_options:
+      slideNumber: 'c/t'
 date: "`r Sys.Date()`"
 ---
 
@@ -29,7 +37,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - They cost money to use, but [pricing](https://cloud.google.com/compute/vm-instance-pricing) is straightforward and on a per-hour basis  
 
-  + For example, 16 cores and 64 GB of RAM costs \$0.54/hour
+  + 16 cores and 64 GB of RAM costs \$0.54/hour
   + 32 cores and 128 GB of RAM costs \$1.08/hour
   + 224 cores and 896 GB RAM costs \$7.57/hour
 
