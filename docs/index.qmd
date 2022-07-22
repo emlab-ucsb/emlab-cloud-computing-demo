@@ -24,7 +24,7 @@ date: "`r Sys.Date()`"
 
 ## Google virtual machines (VM) using Compute Engine  
 
-- Uses Google's [Compute Engine](https://cloud.google.com/compute), part of the Google Cloud ecosystem of produts  
+- Uses Google's [Compute Engine](https://cloud.google.com/compute), part of the Google Cloud ecosystem of products  
 
 - Spin up virtual machines (VMs) while specifying the number of cores you want and how much RAM you want  
 
@@ -45,13 +45,36 @@ date: "`r Sys.Date()`"
   
 - Can install R Studio, allowing you to run R Studio interactively through your web browser
 
-## UCSB servers
+## UCSB high performance computing clusters
 
+- Uses the Pod, a high performance computing cluster, available through the [UCSB Center for Scientific Computing](https://csc.cnsi.ucsb.edu/) (CSC)  
+
+- The pod has 71 nodes:  
+
+  + 64 regular nodes each with 40 cores  
+  + 4 large memory nodes with more than 1TB of RAM  
+  + 3 Graphic Processing Unit (GPU) nodes with 4 32GB V100s connected via NVLink (for image and video processing and some types of machine learning)  
+
+- It's free! 
+
+  + The clusters are funded through an NSF grant and free to use for USCB faculty with proper [citation]() in any publications resulting from their use 
+
+## UCSB high performance computing clusters
+
+ - Getting started on pod:  
+ 
+  + Register for an [account](https://csc.cnsi.ucsb.edu/forms/user-account)     
+  + Access via the terminal    
+  + With [X2GO](https://csc.cnsi.ucsb.edu/docs/using-x2go-gui-login-knot-or-pod) client   
+  + With [Visual Studio Code](https://code.visualstudio.com/) remote connections    
+  + Off-campus: can use any of the above methods but have to connect to the campus VPN first  
+  
 ## Working with data on Google Drive
 
-- Manually move data 
+- Manually move data   
+  + Applications like [FileZilla](https://filezilla-project.org/) can help with transferring data between local and remote servers 
 - [googledrive](https://googledrive.tidyverse.org/index.html) R package to read/write data from the emLab Team Drive
-- Mount Goolge Drive as disk (*not currently working on Goolge Compute Engine*)
+- Mount Google Drive as disk (*not currently working on Google Compute Engine*)
 
 ## Comparing the two approaches
 
