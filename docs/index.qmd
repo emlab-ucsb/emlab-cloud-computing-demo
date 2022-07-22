@@ -57,7 +57,7 @@ date: "`r Sys.Date()`"
 
 - It's free! 
 
-  + The clusters are funded through an NSF grant and free to use for USCB faculty with proper [citation]() in any publications resulting from their use 
+  + The clusters are funded through an NSF grant and free to use for USCB faculty with proper [citation](https://csc.cnsi.ucsb.edu/publications) in any publications resulting from their use 
 
 ## UCSB high performance computing clusters
 
