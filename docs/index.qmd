@@ -1,6 +1,7 @@
 ---
 title: "Cloud computing overview"
 author: "emLab"
+format: revealjs
 output:
   revealjs::revealjs_presentation:
     theme: simple
