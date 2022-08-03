@@ -60,8 +60,10 @@ temp_file_name <- tempfile()
 # Authenticate using a Service Account token for non-interactive authentication
 drive_auth(path = file.path(here::here(), "emlab-gcp-d0cfcb1eaee0.json"))
 
-
-drive_get(id="1qmKT1QHNk9sFEzAWFaicKaJTGi4k079p") %>%
+# Before we can download data non-interactively we have to share the relevant file (Unlumped_ProjectionData.csv)
+# or project folder with the email associated with our OAuth Key
+# For now the Service Account is called test-gdrive-remote and the email is test-gdrive-remote@emlab-gcp.iam.gserviceaccount.com
+drive_get(id="1-tklB_HWWCShvKZXW8GTrsOXoPf0pm2n") %>%
   drive_download(path = temp_file_name) # Should run without asking for authentication
 
 # Now we read it in from the temporary location using read_csv
