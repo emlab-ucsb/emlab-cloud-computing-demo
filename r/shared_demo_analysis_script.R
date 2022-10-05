@@ -88,8 +88,12 @@ upsides_data <- gcs_get_object("Unlumped_ProjectionData.csv")
 upsides_data
 
 # Now we can manipulate the data, and re-upload it to GCS
+# As an example, let's create a new object that is just the first 100 rows
 upsides_data_sliced <- upsides_data %>% 
   slice(1:100)
 
 gcs_upload(upsides_data_sliced,
            name = "upsides_data_sliced.csv")
+
+# To clean things up, we can delete this
+gcs_delete_object("upsides_data_sliced.csv")
