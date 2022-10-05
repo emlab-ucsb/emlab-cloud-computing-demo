@@ -58,11 +58,11 @@ date: "October 12, 2022"
 
 - It's free! 
 
-  + The clusters are funded through an NSF grant and free to use for USCB faculty with proper [citation](https://csc.cnsi.ucsb.edu/publications) in any publications resulting from their use 
+  + The clusters are funded through an NSF grant and free to use for USCB faculty with proper [citation](https://csc.cnsi.ucsb.edu/publications)  
 
 ## UCSB high performance computing clusters
 
- - Getting started on pod:  
+- Getting started on pod:  
  
   + Register for an [account](https://csc.cnsi.ucsb.edu/forms/user-account)     
   + Access via the terminal    
