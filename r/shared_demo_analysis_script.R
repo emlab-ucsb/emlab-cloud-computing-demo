@@ -74,24 +74,15 @@ upsides_data
 # Even faster than Google Drive, you can work with data stored on Google Cloud Storage: https://console.cloud.google.com/storage
 # Load cloud storage package
 library(googleCloudStorageR)
+
 # Set default bucket
 # Ensure the GCS bucket's region is the same region as the GCE VM
 gcs_global_bucket("upsides")
+
 # List all files in the bucket
 gcs_list_objects()
 
-# Let's download the file to a temporary location
-temp_file_name <- tempfile()
-
-# When you fist run this, you will need to authenticate
-# Using your ucsb google account
-gcs_get_object("Unlumped_ProjectionData.csv",
-               saveToDisk = temp_file_name,
-               overwrite = TRUE)
-
-# Now we read it in from the temporary location using read_csv
-# This will load the file in our environment
-upsides_data <- temp_file_name %>%
-  read_csv()
+# Now load the data into R
+upsides_data <- gcs_get_object("Unlumped_ProjectionData.csv")
 
 upsides_data
