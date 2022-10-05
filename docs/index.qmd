@@ -10,7 +10,7 @@ output:
     background_transition: none
     reveal_options:
       slideNumber: 'c/t'
-date: "`r Sys.Date()`"
+date: "October 12, 2022"
 ---
 
 ## Why cloud computing?
