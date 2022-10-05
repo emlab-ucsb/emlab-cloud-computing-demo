@@ -29,7 +29,8 @@ gce_get_external_ip(vm_name)
 
 # Navigate browser to {external_ip}:80
 
-# Clone GitHub repo, try shared_demo_analysis_script.R
+# Clone GitHub repo: https://github.com/emlab-ucsb/emlab-cloud-computing-demo
+# try shared_demo_analysis_script.R
 
 # Let's stop it
 # Remember, Google charges by the hour
