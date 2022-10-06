@@ -49,8 +49,12 @@ toc()
 
 # Now let's say we also want to use some data from Team Drive
 
-# Say we want to read in the "upsides" database,
+# Say we want to read in the "upsides" database
 # Which is on the team drive at: emlab/data/upsides/Unlumped_ProjectionData.csv
+
+# We could simply upload this file through the GUI - we can demo this
+# Or we could directly access it using `googledrive`
+
 # On our computer or browser, we navigate to that file, and copy the google drive link of the file
 
 

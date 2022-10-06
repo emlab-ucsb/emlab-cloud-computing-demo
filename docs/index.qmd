@@ -13,6 +13,16 @@ output:
 date: "October 12, 2022"
 ---
 
+## Road map
+
+- Why Cloud computing?
+- Group discussion: What systems do folks currently use, and what use-cases do folks foresee?
+- Overview of Google VMs
+- Overview of UCSB servers
+- Comparing the two approaches
+- Live demos of Google VMs and UCSB servers
+- Group discussion: Where does emLab go from here?
+
 ## Why cloud computing?
 
 - Running analyses in parallel 
@@ -23,6 +33,14 @@ date: "October 12, 2022"
   
 - Freeing up your personal computer to do other things  
 
+- The ability to run software and packages on specific operating systems 
+
+## Questions for the group
+
+1. What high-performance computing options do you currently use?
+
+2. What do folks foresee as use-cases for using these types of high-performance systems?
+
 ## Google virtual machines (VM) using Compute Engine  
 
 - Uses Google's [Compute Engine](https://cloud.google.com/compute), part of the Google Cloud ecosystem of products  
@@ -31,7 +49,7 @@ date: "October 12, 2022"
 
   + Up to 224 cores and 896 GB RAM!
 
-- They cost money to use, but [pricing](https://cloud.google.com/compute/vm-instance-pricing) is straightforward and on a per-hour basis  
+- [Pricing](https://cloud.google.com/compute/vm-instance-pricing) is straightforward and on a per-hour basis  
 
   + 16 cores and 64 GB of RAM costs \$0.54/hour
   + 32 cores and 128 GB of RAM costs \$1.08/hour
@@ -45,6 +63,7 @@ date: "October 12, 2022"
   + [googleComputeEngineR](https://cloudyr.github.io/googleComputeEngineR/) R package
   
 - Can install R Studio, allowing you to run R Studio interactively through your web browser
+- [GPUs](https://cloud.google.com/compute/docs/gpus) are also available
 
 ## UCSB high performance computing clusters
 
@@ -70,20 +89,22 @@ date: "October 12, 2022"
   + With [Visual Studio Code](https://code.visualstudio.com/) remote connections    
   + Off-campus: can use any of the above methods but have to connect to the campus VPN first  
   
-## Working with data on Google Drive
+## Working with data
 
 - Manually move data   
-  + Applications like [FileZilla](https://filezilla-project.org/) can help with transferring data between local and remote servers 
-- [googledrive](https://googledrive.tidyverse.org/index.html) R package to read/write data from the emLab Team Drive
-- Mount Google Drive as disk (*not currently working on Google Compute Engine*) 
-- Can also use Google Cloud Storage with the [googleCloudStorageR](https://code.markedmondson.me/googleCloudStorageR/) package
+  + For Google VMs - Interactively upload/download data through R Studio in your browser
+  + For UCSB servers: Applications like [FileZilla](https://filezilla-project.org/) can help with transferring data between local and remote servers 
+- For Google VMs - Can also use Google Cloud Storage with the [googleCloudStorageR](https://code.markedmondson.me/googleCloudStorageR/) package
+- For Google VMs: Mount Google Drive as disk (*not currently working on Google VMs* - but hopefully will be soon!) 
+- For both approaches: [googledrive](https://googledrive.tidyverse.org/index.html) R package can read data from the emLab Team Drive
+
 
 ## Comparing the two approaches
 
 - Cost
 - Computing power
 - Handling data
-- Working with data on Google Drive
+- Working with data 
 - Ease of use
 
 ## Our recommendation (*for most applications*)
@@ -102,6 +123,7 @@ Google VMs using Compute Engine
 
 - What do folks think of our recommendation to generally use Google VMs with Compute Engine?
 - Should we update the [emLab SOP](https://emlab-ucsb.github.io/SOP/5-high-performance-computing.html) and make this more formal?
-- We might eventually think about a standard emLab VM Docker image that includes our commonly used packages
-- And maybe even an emLab R package to help automate some of this?
+- Should we think about a standard emLab VM Docker image that includes our commonly used packages?
+- Should we make an emLab R package to help automate some of this?
+- How many people foresee using these types of tools? 
 - Depending on how many people and how intensively we are going to be using this, we may need to think about how to better monitor and manage billing across projects
