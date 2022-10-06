@@ -7,18 +7,15 @@
 library(tidyverse) # for dplyr, purr functions
 library(furrr) # For parallel processing
 library(tictoc) # For keeping track of how long things take
-library(googledrive) # for accessing files on Team Drive
-library(here) # For clean use of file paths
+library(googleCloudStorageR) # For working with data in Google Cloud Storage
 
-# Install htop so you can monitor your CPU usage
-# Run these lines in terminal:
+# First, let's install the htop tool so you can monitor your CPU usage
+# Run these lines in terminal of your R Studio server in your browser:
 # sudo apt update && sudo apt upgrade
 # sudo apt install htop
 # htop
 
 # We can double-check our number of cores
-
-# First, detect the number of cores on your system
 number_cores <- parallel::detectCores()
 
 number_cores
@@ -60,12 +57,15 @@ toc()
 # Say we want to read in the "upsides" database
 # Which is on the team drive at: emlab/data/upsides/Unlumped_ProjectionData.csv
 
-# We could simply upload this file through the GUI - we can demo this
+# Approach 1 - Manually upload
+# We could simply upload this file through the GUI
 
+# Approach 2 - Google Cloud Storage
 # You can work with data stored on Google Cloud Storage: https://console.cloud.google.com/storage
 # Here's a nice tutorial: https://hydroecology.net/computing-in-the-cloud-with-google-and-rstudio/
-# Load cloud storage package
-library(googleCloudStorageR)
+
+# Authenticate GCS - Click 1/yes to store .httr-oauth credentials
+gcs_auth()
 
 # Set default bucket
 # Ensure the GCS bucket's region is the same region as the GCE VM
@@ -86,6 +86,9 @@ upsides_data_sliced <- upsides_data %>%
 
 gcs_upload(upsides_data_sliced,
            name = "upsides_data_sliced.csv")
+
+# List all files in the bucket
+gcs_list_objects()
 
 # To clean things up, we can delete this
 gcs_delete_object("upsides_data_sliced.csv")
