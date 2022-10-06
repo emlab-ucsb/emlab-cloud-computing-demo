@@ -72,6 +72,7 @@ upsides_data <- temp_file_name %>%
 upsides_data
 
 # Even faster than Google Drive, you can work with data stored on Google Cloud Storage: https://console.cloud.google.com/storage
+# Here's a nice tutorial: https://hydroecology.net/computing-in-the-cloud-with-google-and-rstudio/
 # Load cloud storage package
 library(googleCloudStorageR)
 

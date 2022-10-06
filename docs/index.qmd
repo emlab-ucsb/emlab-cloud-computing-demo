@@ -75,7 +75,8 @@ date: "October 12, 2022"
 - Manually move data   
   + Applications like [FileZilla](https://filezilla-project.org/) can help with transferring data between local and remote servers 
 - [googledrive](https://googledrive.tidyverse.org/index.html) R package to read/write data from the emLab Team Drive
-- Mount Google Drive as disk (*not currently working on Google Compute Engine*)
+- Mount Google Drive as disk (*not currently working on Google Compute Engine*) 
+- Can also use Google Cloud Storage with the [googleCloudStorageR](https://code.markedmondson.me/googleCloudStorageR/) package
 
 ## Comparing the two approaches
 
@@ -91,7 +92,9 @@ Google VMs using Compute Engine
 
 ## Live demo time!
 
-- `r/google_compute_engine_demo.R`
+- `r/google_compute_engine_setup.R`
+
+- `r/google_compute_engine_analysis.R`
 
 - `r/ucsb_server_demo.R`
 
