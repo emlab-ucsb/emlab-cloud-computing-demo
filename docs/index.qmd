@@ -96,7 +96,7 @@ date: "October 12, 2022"
   + For UCSB servers: Applications like [FileZilla](https://filezilla-project.org/) can help with transferring data between local and remote servers 
 - For Google VMs - Can also use Google Cloud Storage with the [googleCloudStorageR](https://code.markedmondson.me/googleCloudStorageR/) package
 - For Google VMs: Mount Google Drive as disk (*not currently working on Google VMs* - but hopefully will be soon!) 
-- For both approaches: [googledrive](https://googledrive.tidyverse.org/index.html) R package can read data from the emLab Team Drive
+- For both approaches: [googledrive](https://googledrive.tidyverse.org/index.html) R package can read data from the emLab Team Drive (but it's not recommended - it's very clunky!)
 
 
 ## Comparing the two approaches
