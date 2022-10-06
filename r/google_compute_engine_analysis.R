@@ -10,6 +10,19 @@ library(tictoc) # For keeping track of how long things take
 library(googledrive) # for accessing files on Team Drive
 library(here) # For clean use of file paths
 
+# Install htop so you can monitor your CPU usage
+# Run these lines in terminal:
+# sudo apt update && sudo apt upgrade
+# sudo apt install htop
+# htop
+
+# We can double-check our number of cores
+
+# First, detect the number of cores on your system
+number_cores <- parallel::detectCores()
+
+number_cores
+
 # Define arbitrary function
 # In this case, we'll simply sleep the system for a
 # desired amount of time in s (denoted by sleep_time)
@@ -30,11 +43,6 @@ rep(1,5) %>%
 toc()
 
 # Now let's try this in parallel
-
-# First, detect the number of cores on your system
-number_cores <- parallel::detectCores()
-
-number_cores
 
 # Set up parallel processing
 plan(multisession,

@@ -44,5 +44,3 @@ gce_vm_delete(vm_name)
 
 # Now let's look at the instance list again to make sure it was deleted
 gce_list_instances()
-
-# Add htop demo
