@@ -12,22 +12,24 @@ gce_list_instances()
 # Following https://cloudyr.github.io/googleComputeEngineR/articles/persistent-rstudio.html
 
 # Give your VM a name
-vm_name <- "gavin-rstudio-server-test"
+vm_name <- "gmcdonald-rstudio-server"
 
-# n2-standard-8 has 8 cores and 32 GB of RAM
+# Create and start a VM with your desired specifications
 gce_vm(name = vm_name, 
-       predefined_type = "n2-standard-8", 
+       cpus = 8, # Specify the number of cores
+       memory = 32000, # Specify how much RAM you need, in MB
+       disk_size_gb = 10, # Specify how big a hard drive you need
        template = "rstudio", # This is a standard rstudio install with tidyverse packages
        username = "gmcdonald", 
-       password = "1234", 
-       disk_size_gb = 10) # Specify how big a hard drive you need
+       password = "1234") 
 
 # Now let's look at the instance list
 gce_list_instances()
 
+# Look at the external IP address of your VM
 gce_get_external_ip(vm_name)
 
-# Navigate browser to {external_ip}:80
+# Navigate browser to {external_ip}:80 to view your server
 
 # Clone GitHub repo: https://github.com/emlab-ucsb/emlab-cloud-computing-demo
 # try shared_demo_analysis_script.R
@@ -42,3 +44,5 @@ gce_vm_delete(vm_name)
 
 # Now let's look at the instance list again to make sure it was deleted
 gce_list_instances()
+
+# Add htop demo
