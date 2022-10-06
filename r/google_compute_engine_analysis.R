@@ -8,6 +8,7 @@ library(tidyverse) # for dplyr, purr functions
 library(furrr) # For parallel processing
 library(tictoc) # For keeping track of how long things take
 library(googledrive) # for accessing files on Team Drive
+library(here) # For clean use of file paths
 
 # Define arbitrary function
 # In this case, we'll simply sleep the system for a
@@ -55,6 +56,10 @@ toc()
 
 # The link is: https://drive.google.com/open?id=1-tklB_HWWCShvKZXW8GTrsOXoPf0pm2n&authuser=gmcdonald%40ucsb.edu&usp=drive_fs
 # The file id is therefore: 1-tklB_HWWCShvKZXW8GTrsOXoPf0pm2n
+
+# Authenticate using a Service Account token for non-interactive authentication
+# The json can be downloaded from GCP: https://console.cloud.google.com/iam-admin/serviceaccounts/
+drive_auth(path = file.path(here::here(), "emlab-gcp-841e8a7c268b.json"))
 
 # Let's download the file to a temporary location
 temp_file_name <- tempfile()
