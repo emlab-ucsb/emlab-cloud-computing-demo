@@ -24,9 +24,6 @@ vm <- gce_vm(name = vm_name,
        password = "1234", 
        dynamic_image = "gcr.io/gcer-public/persistent-rstudio")
 
-# Set Google Cloud Storage bucket for the VM
-gce_set_metadata(list(GCS_SESSION_BUCKET = "upsides"), vm)
-
 # Now let's look at the instance list
 gce_list_instances()
 
