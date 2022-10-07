@@ -29,6 +29,8 @@ gce_vm(name = vm_name,
 # Now let's look at the instance list
 gce_list_instances()
 
+# We can also look at the GUI in our web browser: https://console.cloud.google.com/compute
+
 # Look at the external IP address of your VM
 gce_get_external_ip(vm_name)
 
