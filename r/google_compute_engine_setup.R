@@ -15,13 +15,17 @@ gce_list_instances()
 vm_name <- "gmcdonald-rstudio-server"
 
 # Create and start a VM with your desired specifications
-gce_vm(name = vm_name, 
+vm <- gce_vm(name = vm_name, 
        cpus = 8, # Specify the number of cores
        memory = 32000, # Specify how much RAM you need, in MB
-       disk_size_gb = 10, # Specify how big a hard drive you need
+       disk_size_gb = 10, # Specify how big a hard drive you need, in GB
        template = "rstudio", # This is a standard rstudio install with tidyverse packages
        username = "gmcdonald", 
-       password = "1234") 
+       password = "1234", 
+       dynamic_image = "gcr.io/gcer-public/persistent-rstudio")
+
+# Set Google Cloud Storage bucket for the VM
+gce_set_metadata(list(GCS_SESSION_BUCKET = "upsides"), vm)
 
 # Now let's look at the instance list
 gce_list_instances()

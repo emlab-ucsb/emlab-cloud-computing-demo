@@ -64,18 +64,20 @@ toc()
 # You can work with data stored on Google Cloud Storage: https://console.cloud.google.com/storage
 # Here's a nice tutorial: https://hydroecology.net/computing-in-the-cloud-with-google-and-rstudio/
 
-# Authenticate GCS - Click 1/yes to store .httr-oauth credentials
-gcs_auth()
+# List all files in the "upsides" bucket
+# Ensure the GCS bucket's region is the same region as the GCE VM - this will help ensure it runs as fast as possible
+gcs_list_objects(bucket = "upsides")
 
-# Set default bucket
-# Ensure the GCS bucket's region is the same region as the GCE VM
-gcs_global_bucket("upsides")
-
-# List all files in the bucket
-gcs_list_objects()
+# You can also set a "global" default bucket if you want, using gcs_global_bucket("upsides")
+# But we'll explicitly call it out in the following
 
 # Now load the data into R
-upsides_data <- gcs_get_object("Unlumped_ProjectionData.csv")
+
+upsides_data <- gcs_get_object(object_name = "Unlumped_ProjectionData.csv", 
+                               bucket = "upsides")
+
+# Alternatively, you can save it to your VM
+# gcs_get_object(object_name = "Unlumped_ProjectionData.csv", bucket = "upsides", saveToDisk = "upsides/Unlumped_ProjectionData.csv")
 
 upsides_data
 
@@ -84,11 +86,13 @@ upsides_data
 upsides_data_sliced <- upsides_data %>% 
   slice(1:100)
 
-gcs_upload(upsides_data_sliced,
+gcs_upload(file = upsides_data_sliced,
+           bucket = "upsides",
            name = "upsides_data_sliced.csv")
 
 # List all files in the bucket
-gcs_list_objects()
+gcs_list_objects(bucket = "upsides")
 
 # To clean things up, we can delete this
-gcs_delete_object("upsides_data_sliced.csv")
+gcs_delete_object(object_name = "upsides_data_sliced.csv",
+                  bucket = "upsides")
