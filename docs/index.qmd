@@ -10,6 +10,7 @@ output:
     background_transition: none
     reveal_options:
       slideNumber: 'c/t'
+      height: 80
 date: "October 12, 2022"
 ---
 
@@ -101,11 +102,10 @@ date: "October 12, 2022"
 
 ## Comparing the two approaches
 
-- Cost
 - Computing power
-- Handling data
 - Working with data 
 - Ease of use
+- Cost
 
 ## Our recommendation (*for most applications*)
 
