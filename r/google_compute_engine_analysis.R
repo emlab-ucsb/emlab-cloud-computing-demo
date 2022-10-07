@@ -9,7 +9,7 @@ library(furrr) # For parallel processing
 library(tictoc) # For keeping track of how long things take
 library(googleCloudStorageR) # For working with data in Google Cloud Storage
 
-# First, let's install the htop tool so you can monitor your CPU usage
+# If you want to monitor your CPU and memory usage, you can install the htop tool
 # Run these lines in terminal of your R Studio server in your browser:
 # sudo apt update && sudo apt upgrade
 # sudo apt install htop
@@ -33,9 +33,9 @@ tic()
 my_long_function(1)
 toc()
 
-# Now let's run this 5 times in a row and see how long it takes
+# Now let's run this 8 times in a row and see how long it takes
 tic()
-rep(1,5) %>%
+rep(1,8) %>%
   map(my_long_function)
 toc()
 
@@ -48,7 +48,7 @@ plan(multisession,
 # Now let's do what we did before, but in parallel
 # We can simply replace purrr::map with purrr::future_map
 tic()
-rep(1,5) %>%
+rep(1,8) %>%
   future_map(my_long_function)
 toc()
 
@@ -63,6 +63,11 @@ toc()
 # Approach 2 - Google Cloud Storage
 # You can work with data stored on Google Cloud Storage: https://console.cloud.google.com/storage
 # Here's a nice tutorial: https://hydroecology.net/computing-in-the-cloud-with-google-and-rstudio/
+
+# Authenticate GCS
+# This uses the same credentials and GCP
+# Make sure to save .httr-oauth
+gcs_auth()
 
 # List all files in the "upsides" bucket
 # Ensure the GCS bucket's region is the same region as the GCE VM - this will help ensure it runs as fast as possible
