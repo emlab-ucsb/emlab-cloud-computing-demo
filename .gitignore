@@ -29,3 +29,5 @@ vignettes/*.pdf
 *.json
 emlab-cloud-computing-demo.Rproj
 .DS_Store
+# Data folder (for clusters example)
+data/*
