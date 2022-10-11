@@ -10,7 +10,6 @@ output:
     background_transition: none
     reveal_options:
       slideNumber: 'c/t'
-      height: 80
 date: "October 12, 2022"
 ---
 
@@ -121,9 +120,9 @@ Google VMs using Compute Engine
 
 ## Discussion
 
+- How many people foresee using these types of tools? 
 - What do folks think of our recommendation to generally use Google VMs with Compute Engine?
-- Should we update the [emLab SOP](https://emlab-ucsb.github.io/SOP/5-high-performance-computing.html) and make this more formal?
+- Should we update the [emLab SOP](https://emlab-ucsb.github.io/SOP/5-high-performance-computing.html)?
 - Should we think about a standard emLab VM Docker image that includes our commonly used packages?
 - Should we make an emLab R package to help automate some of this?
-- How many people foresee using these types of tools? 
-- Depending on how many people and how intensively we are going to be using this, we may need to think about how to better monitor and manage billing across projects
+- Depending on how many people anare going to be using this, we may need to think about how to better monitor and manage billing across projects
