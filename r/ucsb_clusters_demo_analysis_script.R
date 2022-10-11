@@ -1,5 +1,4 @@
-# This script is almost the same as the shared_demo_analysis_script.R
-# The only difference is line 61 - non-interactive authentication for google drive
+# This script runs through the same demo as google_compute_engine_analysis.R
 # Designed to run on the UCSB servers
 
 # Load packages
@@ -51,25 +50,28 @@ toc()
 # Say we want to read in the "upsides" database,
 # Which is on the team drive at: emlab/data/upsides/Unlumped_ProjectionData.csv
 
-# The link is: https://drive.google.com/open?id=1-tklB_HWWCShvKZXW8GTrsOXoPf0pm2n&authuser=gmcdonald%40ucsb.edu&usp=drive_fs
-# The file id is therefore: 1-tklB_HWWCShvKZXW8GTrsOXoPf0pm2n
+# Approach 1 - Google Drive Package 
+# While possible to use the google drive package it's challenging to set it up with proper non-interactive authentication 
+# Non-interactive authentication requires a Service Account token, you can read more about it here: https://cloud.google.com/iam/docs/service-accounts 
+# And it isn't possible to write data directly to google drive from the clusters using the google drive package 
 
-# Let's download the file to a temporary location
-temp_file_name <- tempfile()
+# Approach 2 - Manually transfer file (recommended - at least for now)
+# It isn't easy or intuitive to read and write directly to google drive from the clusters so for now we recommend just using a file manager client 
+# like FileZilla or Visual Studio Code to move data back and forth from the cluster to google drive file stream 
 
-# Authenticate using a Service Account token for non-interactive authentication
-drive_auth(path = file.path(here::here(), "emlab-gcp-d0cfcb1eaee0.json"))
+# Move the upsides data from google drive to the cluster
+# We can setup the cluster's directories to mimic those of google drive (e.g. our project or in this case the shared data drive)
+upsides_path <- file.path(here::here(), "data", "upsides", "Unlumped_ProjectionData.csv")
 
-# Before we can download data non-interactively we have to share the relevant file (Unlumped_ProjectionData.csv)
-# or project folder with the email associated with our OAuth Key
-# For now the Service Account is called test-gdrive-remote and the email is test-gdrive-remote@emlab-gcp.iam.gserviceaccount.com
-drive_get(id="1-tklB_HWWCShvKZXW8GTrsOXoPf0pm2n") %>%
-  drive_download(path = temp_file_name) # Should run without asking for authentication
+upsides_data <- read_csv(upsides_path)
 
-# Now we read it in from the temporary location using read_csv
-# This will load the file in our environment
-upsides_data <- temp_file_name %>%
-  read_csv()
+# Now we can manipulate the data, and save it locally - we can then move it back over to google drive
+# As an example, let's create a new object that is just the first 100 rows
+upsides_data_sliced <- upsides_data %>% 
+  slice(1:100)
 
-upsides_data
+# Save locally 
+write_csv(upsides_data_sliced, file.path(here::here(), "data", "upsides", "upsides_data_sliced.csv"))
+
+
 
