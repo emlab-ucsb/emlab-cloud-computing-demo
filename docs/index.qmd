@@ -1,6 +1,6 @@
 ---
-title: "Cloud computing overview"
-author: "emLab"
+title: "High-performance computing at emlab"
+subtitle: "Group learning and brainstorming session"
 format: revealjs
 output:
   revealjs::revealjs_presentation:
@@ -10,17 +10,17 @@ output:
 date: "October 12, 2022"
 ---
 
-## Road map
+## Road map for today
 
-- Why Cloud computing?
+- Why high-performance / cloud computing?
 - Group discussion: What systems do folks currently use, and what use-cases do folks foresee?
 - Overview of Google VMs
 - Overview of UCSB servers
 - Comparing the two approaches
-- Live demos of Google VMs and UCSB servers
+- Live walk-throughs of Google VMs and UCSB servers
 - Group discussion: Where does emLab go from here?
 
-## Why cloud computing?
+## Why high-performance / cloud computing?
 
 - Running analyses in parallel 
   + (where more cores are good!)   
@@ -115,7 +115,7 @@ date: "October 12, 2022"
 
 Google VMs using Compute Engine
 
-## Live demo time!
+## Live walk-through time!
 
 - `r/google_compute_engine_setup.R`
 
