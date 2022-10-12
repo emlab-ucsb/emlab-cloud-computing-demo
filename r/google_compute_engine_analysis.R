@@ -9,18 +9,18 @@ library(furrr) # For parallel processing
 library(tictoc) # For keeping track of how long things take
 library(googleCloudStorageR) # For working with data in Google Cloud Storage
 
+# We can double-check our number of cores
+number_cores <- parallel::detectCores()
+
+number_cores
+
 # If you want to monitor your CPU and memory usage, you can install the htop tool
 # Run these lines in terminal of your R Studio server in your browser:
 # sudo apt update && sudo apt upgrade
 # sudo apt install htop
 # htop
 
-# We can double-check our number of cores
-number_cores <- parallel::detectCores()
-
-number_cores
-
-# Define arbitrary function
+# Define arbitrary function for testing parallel processing
 # In this case, we'll simply sleep the system for a
 # desired amount of time in s (denoted by sleep_time)
 my_long_function <- function(sleep_time){
