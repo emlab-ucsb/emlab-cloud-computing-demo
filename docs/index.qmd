@@ -28,9 +28,11 @@ date: "October 12, 2022"
 - Running analyses with data that are too big for your personal computer 
   + (where more RAM is good!)  
   
+- Access to more GPUs for certain types of analyses
+  
 - Freeing up your personal computer to do other things  
 
-- The ability to run software and packages on specific operating systems 
+- The ability to run software and packages on specific operating systems or environments 
 
 ## Questions for the group
 
