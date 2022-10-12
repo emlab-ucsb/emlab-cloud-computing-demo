@@ -15,7 +15,7 @@ date: "October 12, 2022"
 - Why high-performance / cloud computing?
 - Group discussion: What systems do folks currently use, and what use-cases do folks foresee?
 - Overview of Google VMs
-- Overview of UCSB servers
+- Overview of UCSB Center for Scientific Computing (CSC) servers
 - Comparing the two approaches
 - Live walk-throughs of Google VMs and UCSB servers
 - Group discussion: Where does emLab go from here?
