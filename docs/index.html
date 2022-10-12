@@ -362,39 +362,49 @@
 <section id="google-virtual-machines-vm-using-compute-engine" class="slide level2">
 <h2>Google virtual machines (VM) using Compute Engine</h2>
 <ul>
-<li><p>Uses Google’s <a href="https://cloud.google.com/compute">Compute Engine</a>, part of the Google Cloud ecosystem of products</p></li>
-<li><p>Spin up virtual machines (VMs) while specifying the number of cores you want and how much RAM you want</p>
+<li>Uses Google’s <a href="https://cloud.google.com/compute">Compute Engine</a>, part of the <a href="https://cloud.google.com">Google Cloud Platform</a> ecosystem of products<br>
+</li>
+<li>Spin up virtual machines (VMs) while specifying the number of cores you want and how much RAM you want
 <ul>
 <li>Up to 224 cores and 896 GB RAM!</li>
 </ul></li>
-<li><p><a href="https://cloud.google.com/compute/vm-instance-pricing">Pricing</a> is straightforward and on a per-hour basis</p>
-<ul>
-<li>16 cores and 64 GB of RAM costs $0.54/hour</li>
-<li>32 cores and 128 GB of RAM costs $1.08/hour</li>
-<li>224 cores and 896 GB RAM costs $7.57/hour</li>
-</ul></li>
+<li><a href="https://cloud.google.com/compute/docs/gpus">GPUs</a> are also available (up to 16!)</li>
 </ul>
 </section>
 <section id="google-virtual-machines-vm-using-compute-engine-1" class="slide level2">
 <h2>Google virtual machines (VM) using Compute Engine</h2>
 <ul>
+<li><a href="https://cloud.google.com/compute/vm-instance-pricing">Pricing</a> is straightforward and on a per-hour basis
+<ul>
+<li>8 cores and 32 GB of RAM costs $0.27/hour</li>
+<li>16 cores and 64 GB of RAM costs $0.54/hour</li>
+<li>32 cores and 128 GB of RAM costs $1.08/hour</li>
+<li>224 cores and 896 GB RAM costs $7.57/hour</li>
+</ul></li>
+<li>GPU pricing can be found <a href="https://cloud.google.com/compute/gpus-pricing">here</a></li>
+</ul>
+</section>
+<section id="google-virtual-machines-vm-using-compute-engine-2" class="slide level2">
+<h2>Google virtual machines (VM) using Compute Engine</h2>
+<ul>
 <li>Three ways to spin up VMs:
 <ul>
+<li><a href="https://cloudyr.github.io/googleComputeEngineR/">googleComputeEngineR</a> R package</li>
 <li><a href="https://console.cloud.google.com/compute">Google’s online GUI</a><br>
 </li>
 <li><a href="https://grantmcdermott.com/ds4e/gce-i.html">The terminal</a><br>
 </li>
-<li><a href="https://cloudyr.github.io/googleComputeEngineR/">googleComputeEngineR</a> R package</li>
 </ul></li>
 <li>Can install R Studio, allowing you to run R Studio interactively through your web browser</li>
-<li><a href="https://cloud.google.com/compute/docs/gpus">GPUs</a> are also available</li>
+<li>R Studio gives you all the power of R, Python, SQL, Stan, etc</li>
 </ul>
 </section>
 <section id="ucsb-high-performance-computing-clusters" class="slide level2">
 <h2>UCSB high performance computing clusters</h2>
 <ul>
-<li><p>Uses the Pod, a high performance computing cluster, available through the <a href="https://csc.cnsi.ucsb.edu/">UCSB Center for Scientific Computing</a> (CSC)</p></li>
-<li><p>The pod has 71 nodes:</p>
+<li>Uses the Pod, a high performance computing cluster, available through the <a href="https://csc.cnsi.ucsb.edu/">UCSB Center for Scientific Computing</a> (CSC)<br>
+</li>
+<li>The pod has 71 nodes:
 <ul>
 <li>64 regular nodes each with 40 cores<br>
 </li>
@@ -402,16 +412,21 @@
 </li>
 <li>3 Graphic Processing Unit (GPU) nodes with 4 32GB V100s connected via NVLink (for image and video processing and some types of machine learning)</li>
 </ul></li>
-<li><p>It’s free!</p>
-<ul>
-<li>The clusters are funded through an NSF grant and free to use for USCB faculty with proper <a href="https://csc.cnsi.ucsb.edu/publications">citation</a></li>
-</ul></li>
 </ul>
 </section>
 <section id="ucsb-high-performance-computing-clusters-1" class="slide level2">
 <h2>UCSB high performance computing clusters</h2>
 <ul>
-<li><p>Getting started on pod:</p>
+<li>Pricing: It’s free!
+<ul>
+<li>The clusters are funded through an NSF grant and free to use for USCB faculty with proper <a href="https://csc.cnsi.ucsb.edu/publications">citation</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="ucsb-high-performance-computing-clusters-2" class="slide level2">
+<h2>UCSB high performance computing clusters</h2>
+<ul>
+<li>Getting started on pod:
 <ul>
 <li>Register for an <a href="https://csc.cnsi.ucsb.edu/forms/user-account">account</a><br>
 </li>
@@ -433,18 +448,28 @@
 <li>For Google VMs - Interactively upload/download data through R Studio in your browser</li>
 <li>For UCSB servers: Applications like <a href="https://filezilla-project.org/">FileZilla</a> can help with transferring data between local and remote servers</li>
 </ul></li>
-<li>For Google VMs - Can also use Google Cloud Storage with the <a href="https://code.markedmondson.me/googleCloudStorageR/">googleCloudStorageR</a> package</li>
-<li>For Google VMs: Mount Google Drive as disk (<em>not currently working on Google VMs</em> - but hopefully will be soon!)</li>
+</ul>
+</section>
+<section id="working-with-data-1" class="slide level2">
+<h2>Working with data</h2>
+<ul>
+<li>For Google VMs - Can also use Google Cloud Storage with the <a href="https://code.markedmondson.me/googleCloudStorageR/">googleCloudStorageR</a> package, or by setting up a <a href="https://cloudyr.github.io/googleComputeEngineR/articles/persistent-rstudio.html">“persistent R Studio server”</a></li>
+<li>For Google VMs: Mount Google Drive as disk (<em>not currently working on Google VMs - but hopefully will be soon!</em>)</li>
+</ul>
+</section>
+<section id="working-with-data-2" class="slide level2">
+<h2>Working with data</h2>
+<ul>
 <li>For both approaches: <a href="https://googledrive.tidyverse.org/index.html">googledrive</a> R package can read data from the emLab Team Drive (but it’s not recommended - it’s very clunky!)</li>
 </ul>
 </section>
 <section id="comparing-the-two-approaches" class="slide level2">
 <h2>Comparing the two approaches</h2>
 <ul>
+<li>Cost</li>
 <li>Computing power</li>
 <li>Working with data</li>
 <li>Ease of use</li>
-<li>Cost</li>
 </ul>
 </section>
 <section id="our-recommendation-for-most-applications" class="slide level2">
@@ -467,7 +492,7 @@
 <li>Should we update the <a href="https://emlab-ucsb.github.io/SOP/5-high-performance-computing.html">emLab SOP</a>?</li>
 <li>Should we think about a standard emLab VM Docker image that includes our commonly used packages?</li>
 <li>Should we make an emLab R package to help automate some of this?</li>
-<li>Depending on how many people anare going to be using this, we may need to think about how to better monitor and manage billing across projects</li>
+<li>We may need to think about how to better monitor and manage billing across projects</li>
 </ul>
 <div class="footer footer-default">
 
