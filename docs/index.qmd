@@ -1,5 +1,5 @@
 ---
-title: "High-performance computing at emlab"
+title: "High-performance computing at emLab"
 subtitle: "Group learning and brainstorming session"
 format: revealjs
 output:
